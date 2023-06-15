@@ -39,7 +39,7 @@ client.on('message', (message) => {
   .then((chat)=>{
     isPrivate = !(chat.isGroup)
   })
-  console.log('STATE(MENTION|PRIVATE)',message.body.indexOf('@2348127928004')>= 0 , isPrivate)
+  console.log('REPLY STATE (MENTION , PRIVATE)',message.body.indexOf('@2348127928004')>= 0 , isPrivate)
   if (message.body.indexOf('@2348127928004')>= 0 || isPrivate){
   
   
@@ -55,7 +55,7 @@ client.on('message', (message) => {
     else if (perc < 0.4){
     message.reply('Nice to meet you')}
     else if (perc < 0.6){
-      message.reply('Hello, there 😎. Who de brit')
+      message.reply('Hello, there 😎')
     }
     else if (perc < 0.8) {
       message.reply('Hi, how is production 🧩')
@@ -64,6 +64,24 @@ client.on('message', (message) => {
       message.reply('Hey, happy to see you ✨')
     }
     break;
+
+    case 'welcome': case 'you are welcome':
+    perc = Math.random()
+    if (perc < 0.2){
+    message.reply('Toonitt Media Bot 😊 is at your service');}
+    else if (perc < 0.4){
+    message.reply('Nice to meet you')}
+    else if (perc < 0.6){
+      message.reply('Hello, there 😎')
+    }
+    else if (perc < 0.8) {
+      message.reply('Hi, how is production 🧩')
+    }
+    else {
+      message.reply('Thank you, happy to see you ✨')
+    }
+    break;
+
     case 'goodnight': case 'good night': case 'good night!': case 'rest': case 'gn':
     perc = Math.random()
     if (perc < 0.2){
