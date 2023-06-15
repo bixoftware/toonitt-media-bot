@@ -114,8 +114,20 @@ client.on('message', (message) => {
     else {
       message.reply('GM from this side, be productive ⚡')
     }
+    message.react('☀️')
     break;
 
+    case 'what can you do': case 'do something': case 'how can you help': case 'help me':
+      message.reply(`I can ease your mind and at the same time blow it. Say 'fun fact' or 'motivate us'`);
+    break;
+
+    case 'what is your name': case 'name?': case 'what is your name?': case 'who is this':
+      message.reply('I am Toonitt Media Bot or simply TMBot🙂');
+    break;
+
+    case 'who are you': case 'what are you': case 'who are you?': case 'who is this':
+      message.reply('I am Toonitt Media Bot designed to keep you company during production. I am based on GPT-0 🫠. Mention me to get my reply');
+    break;
     case 'date': case 'what is the date': case 'tell me the date': case 'today':
       let date = new Date()
       message.reply(date.toLocaleDateString());
@@ -176,9 +188,9 @@ client.on('message', (message) => {
     break;
     
     //Something random
-    case 'tell me something random': case 'say something useless': case 'un fact': case 'say something':
+    case 'tell me something random': case 'say something useless': case 'fun fact': case 'say something':
       case 'tell us something random': case 'tell a fact': case 'tell a fun fect': case 'speak randomly':
-        case 'speak random':
+        case 'speak random': case 'say a fun fact': case 'say a fact': case 'fact': case 'fun facts':
       
       fetch(`https://uselessfacts.jsph.pl/api/v2/facts/random`)
       .then(res=>res.json())
@@ -202,7 +214,7 @@ client.on('message', (message) => {
 
         // Emmanuel
       case 'image: Ekopimo': case 'image: emmanuel': case 'image: emmanuel ekpan': 
-        MessageMedia.fromUrl(`https://toonittmedia.netlify.app/images/emmnuel.png`)
+        MessageMedia.fromUrl(`https://toonittmedia.netlify.app/images/emmanuel.png`)
         .then((messageMedia)=>{
             message.reply(messageMedia)
         })
@@ -263,7 +275,7 @@ client.on('message', (message) => {
         
         // banner
       case 'lauch banner': case 'advert': case 'our advert': case 'our banner': 
-      case 'banner advert': case 'banner':
+      case 'banner advert': case 'banner': case 'image: advert': case 'image: banner':
         MessageMedia.fromUrl(`https://toonittmedia.netlify.app/images/news.png`)
         .then((messageMedia)=>{
             message.reply(messageMedia)
@@ -278,7 +290,7 @@ client.on('message', (message) => {
       if (perc<0.5){
         message.reply('I need updates to my knowledge base to answer that question')
       }
-      else if (perc <0.7) {
+      else if (perc <0.8) {
         message.react('😶')
       }
       else {
