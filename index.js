@@ -171,13 +171,13 @@ client.on('message', (message) => {
       case 'explain': case 'explain that':
       perc = Math.random()
       if (perc<0.4){
-        message.reply('Not good at explaning things👌')
+        message.reply(`I don't think I can explain that. Maybe next time`)
       }
       else if (perc <0.7) {
-        message.reply('You should ask yourself that')
+        message.reply(`I don't have an explanation`)
       }
       else {
-        message.reply('Not sure')
+        message.reply('Ask yourself that question')
       }
       break;
 
