@@ -128,6 +128,20 @@ client.on('message', (message) => {
     case 'who are you': case 'what are you': case 'who are you?': case 'who is this':
       message.reply('I am Toonitt Media Bot designed to keep you company during production. I am based on GPT-0 🫠. Mention me to get my reply');
     break;
+    case 'how are you': case 'how are you doing': case 'how is it going': case 'how are you?':
+      perc = Math.random()
+      if (perc < 0.3){
+         message.reply(`How can I say I'm not fine. Emmanuel would cease me`)
+      }
+      else if (perc < 0.5) {
+        message.reply('Good as new')
+      }
+      
+      else {
+        message.react('Fresh and fine')
+        message.react('👍')
+      }
+    break;
     case 'date': case 'what is the date': case 'tell me the date': case 'today':
       let date = new Date()
       message.reply(date.toLocaleDateString());
@@ -167,7 +181,7 @@ client.on('message', (message) => {
         message.reply('Good news')
       }
       break;
-
+      // Explain
       case 'explain': case 'explain that':
       perc = Math.random()
       if (perc<0.4){
