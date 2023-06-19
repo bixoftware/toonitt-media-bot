@@ -181,6 +181,7 @@ client.on('message', (message) => {
         message.reply('Good news')
       }
       break;
+      
       // Explain
       case 'explain': case 'explain that':
       perc = Math.random()
