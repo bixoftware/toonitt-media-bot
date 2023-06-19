@@ -167,6 +167,20 @@ client.on('message', (message) => {
         message.reply('Good news')
       }
       break;
+
+      case 'explain': case 'explain that':
+      perc = Math.random()
+      if (perc<0.4){
+        message.reply('Not good at explaning things👌')
+      }
+      else if (perc <0.7) {
+        message.reply('You should ask yourself that')
+      }
+      else {
+        message.reply('Not sure')
+      }
+      break;
+
     case 'motivate me': case 'tell me a quote': case 'inspire me': case 'inspire us':
       case 'motivate us': case 'tell us a quote': case 'tell a quote': case 'speak motivationally':
         case 'speak inspirationally':
@@ -213,7 +227,7 @@ client.on('message', (message) => {
       break;
 
         // Emmanuel
-      case 'image: Ekopimo': case 'image: emmanuel': case 'image: emmanuel ekpan': 
+      case 'image: ekopimo': case 'image: emmanuel': case 'image: emmanuel akpan': 
         MessageMedia.fromUrl(`https://toonittmedia.netlify.app/images/emmanuel.png`)
         .then((messageMedia)=>{
             message.reply(messageMedia)
