@@ -235,6 +235,22 @@ client.on('message', (message) => {
       )
     break;
 
+    // advice slip
+    case 'advise me': case 'advise us': case 'advice': case 'advise':
+      fetch(`https://api.adviceslip.com/advice`)
+      .then(res=>res.json())
+      .then((data)=>{
+        let finaltext = data.slip.advice
+        message.reply(finaltext)
+      })
+      .catch(
+        (err)=>{
+          console.log(err)
+          message.reply('Error from my side, give me a few seconds and retry')
+        }
+      )
+    break;
+
     case 'goodbye': case 'good bye': case 'bye': case 'cease': case 'lost':
       case 'get lost':
       message.reply('Bye!👋 for now')
@@ -316,14 +332,11 @@ client.on('message', (message) => {
         break;
     default:
       perc = Math.random()
-      if (perc<0.5){
+      if (perc<0.3){
         message.reply('I need updates to my knowledge base to answer that question')
       }
-      else if (perc <0.8) {
-        message.react('😶')
-      }
       else {
-        message.reply(`I don't think I have an answer to that question 🥲`)
+        message.react('😶')
       }
   }}
 });
